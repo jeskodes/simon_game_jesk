@@ -24,8 +24,10 @@ beforeAll(() => {
 });
 
 /**
- * Write first test - check is game object contains a key 
+ * Write first test - check if game object contains a key 
  * called score. ss
+ * .toBe matcher
+ * .toEqual matcher 
  */
 
 describe("game object contains correct keys", () => {
@@ -34,5 +36,30 @@ describe("game object contains correct keys", () => {
     });
     test("currentGame key exists", ()=> {
         expect("currentGame" in game).toBe(true); 
+    });
+    test("playerMoves key exists", ()=> {
+        expect("playerMoves" in game).toBe(true); 
+    });
+    test("choices key exists", ()=> {
+        expect("choices" in game).toBe(true); 
+    });
+    test("choices contain correct ids", ()=> {
+        expect(game.choices).toEqual(["button1", "button2", "button3", "button4"]);
+    });
+});
+
+/**Test if the newGame function works. 
+ * New block because this is not within the game object 
+ * Use beforeAll function to set up fake values for game
+ * To test if it resets the values correctly*/
+
+describe("newGame works correctly", () => {
+    beforeAll(() => {
+        game.score = 42;
+        game.score = 42;
+        newGame(); 
+    });
+    test("should set the game score to zero", ()=> {
+        expect(game.score).toEqual(0);
     });
 });

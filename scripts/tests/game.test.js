@@ -1,7 +1,7 @@
 /*@jest-environment jsdom*/
  
 //Import game object from game.js
-const { game, newGame, sum } = require("../game"); 
+const { game, newGame, } = require("../game"); 
 
 /**
  * beforeAll function
@@ -63,6 +63,15 @@ describe("newGame works correctly", () => {
     });
     test("should set game score to zero", () => {
         expect(game.score).toEqual(0);
+    });
+    test("should reset playerMoves array to empty", () => {
+        expect(game.playerMoves).toEqual([]);
+    });
+    test("should reset currentGame array to empty", () => {
+        expect(game.currentGame).toEqual([]);
+    });
+    test("should display zero for the element with the id of score", () => {
+        expect(document.getElementById("score").innerText).toEqual(0);
     });
 });
 

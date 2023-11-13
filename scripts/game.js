@@ -8,7 +8,11 @@ let game = {
     choices: ["button1", "button2", "button3", "button4"],
 }
 
-/**Change game.score number to test */
+/**Change game.score number to test
+ * To fully reset game need to call functions: 
+ * showScore()
+ * addTurn()
+ */
 function newGame() {
     game.currentGame = [];
     game.playerMoves = [];
@@ -25,4 +29,4 @@ function newGame() {
  * In curly braces because will be exporting more than 
  * one object and function to the tests
  */
-module.exports = { game, newGame, sum  };
+module.exports = { game, newGame };

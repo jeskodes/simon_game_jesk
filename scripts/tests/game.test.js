@@ -1,7 +1,7 @@
 /*@jest-environment jsdom*/
  
 //Import game object from game.js
-const { game } = require("../game"); 
+const { game, newGame, sum } = require("../game"); 
 
 /**
  * beforeAll function
@@ -56,10 +56,18 @@ describe("game object contains correct keys", () => {
 describe("newGame works correctly", () => {
     beforeAll(() => {
         game.score = 42;
-        game.score = 42;
-        newGame(); 
+        game.playerMoves = ["button1", "button2"];
+        game.currentGame = ["button1", "button2"];
+        document.getElementById("score").innerText = "42";
+        newGame();
     });
-    test("should set the game score to zero", ()=> {
+    test("should set game score to zero", () => {
         expect(game.score).toEqual(0);
     });
 });
+
+// describe("function returns different values based on parameters", () => {
+//     test('4 + 4 should equal 8', () => {
+//         expect(sum(4, 3)).toBe(8);
+//     });
+// })

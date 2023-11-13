@@ -58,25 +58,20 @@ describe("newGame works correctly", () => {
         game.score = 42;
         game.playerMoves = ["button1", "button2"];
         game.currentGame = ["button1", "button2"];
-        document.getElementById("score").innerText = "42";
+        document.getElementById("score").innerText = "42"; // Set score on DOM to test. 
         newGame();
     });
     test("should set game score to zero", () => {
         expect(game.score).toEqual(0);
     });
     test("should reset playerMoves array to empty", () => {
-        expect(game.playerMoves).toEqual([]);
+        expect(game.playerMoves.length).toEqual(0);
     });
-    test("should reset currentGame array to empty", () => {
-        expect(game.currentGame).toEqual([]);
+    test("should be on element in currentGame array", () => {
+        expect(game.currentGame.length).toBe(1); //will contain one move 
     });
     test("should display zero for the element with the id of score", () => {
         expect(document.getElementById("score").innerText).toEqual(0);
     });
 });
 
-// describe("function returns different values based on parameters", () => {
-//     test('4 + 4 should equal 8', () => {
-//         expect(sum(4, 3)).toBe(8);
-//     });
-// })

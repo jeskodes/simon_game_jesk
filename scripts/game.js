@@ -18,18 +18,25 @@ function newGame() {
     game.playerMoves = [];
     game.score = 0;
     showScore(); 
+    addTurn();
+}
+
+/**add turn function needs to: 
+ * Clear the playerMoves array because start of new turn. 
+ * Randomly select one of the choices from game.choices
+ * Push the random game.choices into currentGame array. 
+ * Call the showTurns function
+ */
+function addTurn(){
+    game.playerMoves = [];
+    
 }
 
 function showScore(){
     document.getElementById("score").innerText = game.score; 
 }
 
-// let a = 4
-// let b = 3
 
-// function sum(a, b) {
-//     return a + b;
-// }
 /**Need to export game and import into test file
  * In curly braces because will be exporting more than 
  * one object and function to the tests

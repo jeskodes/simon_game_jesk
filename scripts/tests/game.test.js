@@ -1,7 +1,7 @@
 /*@jest-environment jsdom*/
  
 //Import game object from game.js
-const { game, newGame, } = require("../game"); 
+const { game, newGame, showScore} = require("../game"); 
 
 /**
  * beforeAll function
